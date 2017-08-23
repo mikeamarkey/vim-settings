@@ -28,6 +28,17 @@ let g:ctrlp_abbrev = {
 let g:ctrlp_user_command =
   \ ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
+" Cancel IME
+if has('mac')
+  set ttimeoutlen=1
+  let g:imeoff = 'osascript -e "tell application \"System Events\" to key code 102"'
+  augroup MyIMEGroup
+    autocmd!
+    autocmd InsertLeave * :call system(g:imeoff)
+  augroup END
+  noremap <silent> <ESC> <ESC>:call system(g:imeoff)<CR>
+endif
+
 " Beginner Things
 nnoremap <up> <nop>
 nnoremap <right> <nright>
