@@ -1,13 +1,12 @@
-"" Initialization
-set nocompatible
-
-set modelines=0
-
 " Plugins
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 call plug#begin('~/.vim/plugged')
-Plug 'KeitaNakamura/neodark.vim'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'tpope/vim-surround'
+Plug 'jiangmiao/auto-pairs'
+Plug 'tpope/vim-unimpaired'
+Plug 'joshdick/onedark.vim'
 Plug 'kchmck/vim-coffee-script'
 call plug#end()
 
@@ -28,6 +27,9 @@ let g:ctrlp_abbrev = {
 let g:ctrlp_user_command =
   \ ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
+" Indent Guides
+let g:indent_guides_enable_on_vim_startup = 1
+
 " Cancel IME
 if has('mac')
   set ttimeoutlen=1
@@ -38,6 +40,11 @@ if has('mac')
   augroup END
   noremap <silent> <ESC> <ESC>:call system(g:imeoff)<CR>
 endif
+
+" Initialization
+set nocompatible
+
+set modelines=0
 
 " Beginner Things
 nnoremap <up> <nop>
@@ -98,15 +105,9 @@ set wrap
 set textwidth=80
 set formatoptions=qrn1
 set colorcolumn=85
-
-" List
-" set list
-" set listchars=tab:▸\ ,eol:¬
-
-" Autosave
-" au Focuslost * :wa
 au BufWritePre * %s/\s\+$//e
 
 " Colors
-let g:neodark#terminal_transparent = 1 " default: 0
-colorscheme neodark
+" joshdick/onedark.vim
+syntax on
+colorscheme onedark
