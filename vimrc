@@ -12,7 +12,9 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-unimpaired'
 Plug 'joshdick/onedark.vim'
 Plug 'kchmck/vim-coffee-script'
-Plug 'etaoins/vim-volt-syntax'
+" Plug 'etaoins/vim-volt-syntax'
+Plug 'pangloss/vim-javascript'
+Plug 'jparise/vim-graphql'
 call plug#end()
 
 " CtrlP
