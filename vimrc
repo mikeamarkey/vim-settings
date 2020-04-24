@@ -56,7 +56,7 @@ if has('mac')
     autocmd!
     autocmd InsertLeave * :call system(g:imeoff)
   augroup END
-  noremap <silent> <ESC> <ESC>:call system(g:imeoff)<CR>
+  " noremap <silent> <ESC> <ESC>:call system(g:imeoff)<CR>
 endif
 
 " Substitute commands in normal mode
@@ -146,7 +146,6 @@ au BufWritePre * %s/\s\+$//e
 set guifont=Ricty\ Diminished\ Regular:h16
 
 " Colors
-" joshdick/onedark.vim
 syntax on
 colorscheme onedark
 
